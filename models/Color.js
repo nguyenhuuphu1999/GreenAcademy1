@@ -10,7 +10,7 @@ Color.init({
         primaryKey:true
     },
     name:DataTypes.STRING,
-    rgb:DataTypes.STRING
+    color:DataTypes.STRING
 },{
     sequelize,
     modelName:"Color",

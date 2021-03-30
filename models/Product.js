@@ -5,7 +5,7 @@ const sequelize  = require('./Sequelize');
 class Product extends Model{}
 
 Product.init({
-    product_id:DataTypes.STRING,
+   
     name:DataTypes.STRING,
     type:DataTypes.STRING,
     price:DataTypes.NUMBER,

@@ -3,7 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
+var cors = require('cors')
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var Booking_test_driving = require('./routes/Booking_test_driving/Booking_test_driving')
@@ -18,9 +18,23 @@ var Product = require('./routes/Product/Product')
 var Promotion = require('./routes/Promotion/Promotion')
 var Theme_banner = require('./routes/Theme_banner/Theme_banner')
 var Nguoi_dung = require('./routes/Nguoi_dung/Nguoi_dung')
+var TypeProduct = require('./routes/TypeProduct/TypeProduct')
 
 
 // view engine setup
+
+var whitelist = ['http://localhost:3000', 'http://example2.com']
+var corsOptions = {
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1) {
+      callback(null, true)
+    } else {
+      callback(new Error('Not allowed by CORS'))
+    }
+  }
+}
+
+app.use(cors())
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
@@ -43,7 +57,7 @@ app.use('/product',Product)
 app.use('/promotion',Promotion)
 app.use('/theme_banner',Theme_banner)
 app.use('/nguoi_dung',Nguoi_dung)
-
+app.use('/typeproduct',TypeProduct)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

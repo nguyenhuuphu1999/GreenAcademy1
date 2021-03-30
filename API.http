@@ -71,7 +71,7 @@ Content-Type: application/json
 
 {
     "name":"red",
-    "rgb":"255,0,0"
+    "color":"#ffff"
         
 }
 
@@ -237,7 +237,7 @@ DELETE  http://localhost:9999/order_bill/1
 GET  http://localhost:9999/product
 
 ###
-GET   http://localhost:9999/product/2
+GET   http://localhost:9999/product/8
 
 ###
 POST http://localhost:9999/product
@@ -362,3 +362,6 @@ Content-Type: application/json
 POSt  http://localhost:9999/nguoi_dung/auth
 Content-Type: application/json
 Authorization: Basic bmhwMjEzMisxQGdtYWlsLmNvbSAyMDIxLTA0LTI4IDEwOjM5OjAxIGRkNGU3ZWQwLTg1YTItNGIzNi1iZTVhLTQwYTdhMWU1YmE2Ng==
+
+###
+GET  http://localhost:9999/typeproduct

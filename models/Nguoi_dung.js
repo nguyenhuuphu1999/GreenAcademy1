@@ -1,5 +1,8 @@
+const { token } = require("morgan");
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("./Sequelize");
+
+
 
 class Nguoi_dung extends Model {}
 
@@ -19,4 +22,14 @@ Nguoi_dung.init({
     timestamps: false,
   }
 );
+// Token.hasMany(Nguoi_dung,{
+//   foreignKey:"id",
+// })
+// Nguoi_dung.belongsTo(Token,{
+//   foreignKey:"user_id",
+//   as:"token_user"
+// })
+
 module.exports= Nguoi_dung
+
+

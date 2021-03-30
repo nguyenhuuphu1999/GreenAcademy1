@@ -35,7 +35,7 @@ Router.post('/', async (req,res) =>{
     const result =await Color.create({
         
         name:req.body.name,
-        rgb:req.body.rgb
+        color:req.body.color
         
     })
 
@@ -51,7 +51,7 @@ Router.put('/:id', async (req,res)=>{
     const result = await Color.update(
     {
         name:req.body.name,
-        rgb:req.body.rgb
+        color:req.body.color
     },{
         where:{
             id:req.params.id

@@ -20,7 +20,8 @@ Router.get('/:id',async (req,res) => {
     const result = await Detail_each_product.findOne({
        where:{
            id:req.params.id
-       }
+       },
+      
     })
 
     res.json({
