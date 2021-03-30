@@ -335,7 +335,8 @@ Content-Type: application/json
 DELETE  http://localhost:9999/theme_banner/1
 
 ######################################## Nguoi dung
-
+GET http://localhost:9999/nguoi_dung
+###
 POST http://localhost:9999/nguoi_dung
 Content-Type: application/json
 

@@ -8,9 +8,15 @@ const { v4: uuidv4 } = require("uuid");
 const Token = require("../../models/Token");
 var fs = require("fs");
 var md5 = require("md5");
+const QuyenNguoiDung = require("../../models/QuyenNguoiDung");
 
 Router.get('/',async(req,res)=>{
-  const result = await Nguoi_dung.findAll({})
+  const result = await Nguoi_dung.findAll({
+    include:{
+      model:QuyenNguoiDung,
+      as:'quyen'
+    }
+  })
   res.json({
     data:result,
     error:false
